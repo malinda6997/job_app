@@ -13,7 +13,7 @@ class GetData {
     List<jobModel> jobs = [
       jobModel(
           title: "Senior UI UX Engineer",
-          salary: "LKR 50,000,00",
+          salary: "LKR 250,000,00",
           companyName: "Facebook",
           location: "Australia",
           logo: facebook,
@@ -28,8 +28,8 @@ class GetData {
       jobModel(
           title: "Software Engineer",
           salary: "LKR 120,000,00",
-          companyName: "Facebook",
-          location: "Sri lanka",
+          companyName: "Microsoft",
+          location: "America",
           logo: microsoft,
           time: "5 Days Left"),
     ];
