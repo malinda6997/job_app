@@ -73,38 +73,74 @@ class _HomeState extends State<Home> {
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children:List.generate(data.getJobData().length, (index){
+                  children: List.generate(data.getJobData().length, (index) {
                     return Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Container(
-                                        width: size.width * 0.68,
-                                        height: size.height * 0.24,
-                                        padding: EdgeInsets.all(8),
-                                        decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10),
-                                        ),
-                                        child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        width: size.width * 0.68,
+                        height: size.height * 0.24,
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
                           children: [
-                            Text(
-                              "Senior UX Designer",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  data.getJobData()[index].title,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                Icon(
+                                  Icons.bookmark_add,
+                                  color: Colors.grey,
+                                ),
+                              ],
                             ),
-                            Icon(
-                              Icons.bookmark_add,
-                              color: Colors.grey,
+                            Row(
+                              children: [
+                                Text(
+                                  data.getJobData()[index].salary,
+                                  style: TextStyle(
+                                      color: const Color.fromARGB(
+                                          255, 197, 197, 197)),
+                                ),
+                                SizedBox(
+                                  width: 12,
+                                ),
+                                Container(
+                                  padding: EdgeInsets.only(
+                                      left: 10, right: 10, top: 5, bottom: 5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey.shade700,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Text(
+                                    data.getJobData()[index].type,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                           
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                    data.getJobData()[index].logo,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
-                        )
-                      ],
-                                        ),
-                                      ),
+                        ),
+                      ),
                     );
                   }),
                 ),
