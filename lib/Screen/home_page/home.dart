@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_app/Screen/home_page/components/appbar.dart';
+import 'package:job_app/Screen/home_page/components/search_bar.dart';
+import 'package:job_app/services/get_data.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,6 +11,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  GetData data = GetData();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -45,33 +48,66 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 10,
               ),
+              searchBar(size: size),
+              SizedBox(
+                height: 15,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: size.width * 0.73,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: "Search for Jobs",
-                        fillColor: Colors.white,
-                        filled: true,
-                        border: UnderlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
+                  Text(
+                    "Popular Job",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  SizedBox(width: 10,),
-                  Container(
-                    width: 55,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Icon(Icons.search,color: Colors.white,),
+                  Text(
+                    "Show All",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
                   )
                 ],
+              ),
+              SizedBox(height: 10),
+              SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children:List.generate(data.getJobData().length, (index){
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                                        width: size.width * 0.68,
+                                        height: size.height * 0.24,
+                                        padding: EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Senior UX Designer",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Icon(
+                              Icons.bookmark_add,
+                              color: Colors.grey,
+                            ),
+                          ],
+                        )
+                      ],
+                                        ),
+                                      ),
+                    );
+                  }),
+                ),
               )
             ],
           ),
