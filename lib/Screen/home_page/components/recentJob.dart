@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:job_app/Models/job_model.dart';
+//import 'package:job_app/Models/job_model.dart';
 import 'package:job_app/services/get_data.dart';
 
 class recentJob extends StatelessWidget {
