@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_app/Screen/home_page/home.dart';
 //import 'package:job_app/Screen/home_page/home.dart';
-import 'package:job_app/Screen/jobView.dart';
+//import 'package:job_app/Screen/jobView.dart';
 
 void main() {
   runApp(const MyApp());

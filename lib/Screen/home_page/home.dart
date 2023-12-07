@@ -5,7 +5,7 @@ import 'package:job_app/Screen/home_page/components/card.dart';
 import 'package:job_app/Screen/home_page/components/recentJob.dart';
 import 'package:job_app/Screen/home_page/components/search_bar.dart';
 import 'package:job_app/Screen/home_page/components/titles.dart';
-import 'package:job_app/Screen/jobView.dart';
+//import 'package:job_app/Screen/jobView.dart';
 import 'package:job_app/services/get_data.dart';
 
 class Home extends StatefulWidget {
