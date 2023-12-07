@@ -69,14 +69,14 @@ class _jobViewPageState extends State<jobViewPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Senior UX Designer",
+                          widget.model.title,
                           style: TextStyle(
                               fontSize: 25, fontWeight: FontWeight.bold),
                         ),
                         Row(
                           children: [
                             Text(
-                              "LKR 150,000.00",
+                              widget.model.salary,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 92, 90, 90)),
                             ),
@@ -90,7 +90,7 @@ class _jobViewPageState extends State<jobViewPage> {
                                   color: Colors.grey.shade700,
                                   borderRadius: BorderRadius.circular(5)),
                               child: Text(
-                                "Full time",
+                                widget.model.type,
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
@@ -103,10 +103,13 @@ class _jobViewPageState extends State<jobViewPage> {
                         ),
                         Row(
                           children: [
-                            Image.network(
-                              "https://th.bing.com/th/id/R.84669eb4301059aa602096c83a13e15f?rik=FkFOcs3CThcCJQ&pid=ImgRaw&r=0",
-                              width: 30,
-                              height: 30,
+                            Hero(
+                              tag: widget.model.logo,
+                              child: Image.network(
+                                widget.model.logo,
+                                width: 30,
+                                height: 30,
+                              ),
                             ),
                             SizedBox(
                               width: 10,
@@ -115,14 +118,14 @@ class _jobViewPageState extends State<jobViewPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Facebook",
+                                  widget.model.companyName,
                                   style: TextStyle(
                                       color: const Color.fromARGB(255, 0, 0, 0),
                                       fontSize: 19,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
-                                  "Australia",
+                                  widget.model.location,
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 125, 123, 123),
                                       fontWeight: FontWeight.w500,
@@ -132,7 +135,7 @@ class _jobViewPageState extends State<jobViewPage> {
                             ),
                             const Spacer(),
                             Text(
-                              "7 days ago",
+                              widget.model.time,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 125, 123, 123),
                                   fontSize: 12),

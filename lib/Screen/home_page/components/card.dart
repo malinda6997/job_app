@@ -82,10 +82,13 @@ class card extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Image.network(
-                          data.getJobData()[index].logo,
-                          width: 30,
-                          height: 30,
+                        Hero(
+                          tag: data.getJobData()[index].logo,
+                          child: Image.network(
+                            data.getJobData()[index].logo,
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                         SizedBox(
                           width: 10,
