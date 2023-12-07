@@ -29,7 +29,8 @@ class _jobViewPageState extends State<jobViewPage> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://th.bing.com/th/id/R.42986191dbfb489c24f7e7e09a070d6d?rik=baVJxq0ESiltmw&pid=ImgRaw&r=0"),
+                        widget.model.cover
+                          ),
                     ),
                   ),
                   child: Stack(

@@ -6,6 +6,7 @@ class jobModel {
   String logo;
   String location;
   String time;
+  String cover;
 
   jobModel(
       {required this.title,
@@ -14,5 +15,6 @@ class jobModel {
       required this.companyName,
       required this.location,
       required this.logo,
-      required this.time});
+      required this.time,
+      required this.cover});
 }

@@ -9,29 +9,36 @@ class GetData {
   final microsoft =
       "https://th.bing.com/th/id/R.3d6a2ad56bc3403c5cfcc3efe09b741b?rik=7w0mZmIMOAqbkQ&pid=ImgRaw&r=0";
 
-   List<jobModel> getJobData() {
+  final uiux = "https://wallpaperaccess.com/full/6000163.jpg";
+  final flutter = "https://i.morioh.com/201012/52852364.webp";
+  final software = "https://wallpapercave.com/wp/wp7723995.jpg";
+
+  List<jobModel> getJobData() {
     List<jobModel> jobs = [
       jobModel(
-          title: "Senior UI UX Engineer",
+          title: "Senior UI UX Designer",
           salary: "LKR 250,000,00",
           companyName: "Facebook",
           location: "Australia",
           logo: facebook,
-          time: "7 Days Left"),
+          time: "7 Days Left",
+          cover:uiux),
       jobModel(
           title: "Senior Flutter Developer",
           salary: "LKR 100,000,00",
           companyName: "Google",
           location: "Australia",
           logo: google,
-          time: "5 Days Left"),
+          time: "5 Days Left",
+          cover:flutter),
       jobModel(
           title: "Software Engineer",
           salary: "LKR 120,000,00",
           companyName: "Microsoft",
-          location: "America",
+          location: "Canada",
           logo: microsoft,
-          time: "5 Days Left"),
+          time: "5 Days Left",
+          cover:software),
     ];
     return jobs;
   }
