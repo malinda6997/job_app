@@ -3,6 +3,7 @@ import 'package:job_app/Screen/home_page/components/Topics.dart';
 import 'package:job_app/Screen/home_page/components/appbar.dart';
 import 'package:job_app/Screen/home_page/components/card.dart';
 import 'package:job_app/Screen/home_page/components/recentJob.dart';
+import 'package:job_app/Screen/home_page/components/recent_title.dart';
 import 'package:job_app/Screen/home_page/components/search_bar.dart';
 import 'package:job_app/Screen/home_page/components/titles.dart';
 //import 'package:job_app/Screen/jobView.dart';
@@ -50,7 +51,7 @@ class _HomeState extends State<Home> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Titles_showAll()],
+                  children: [recent_title()],
                 ),
                 SizedBox(
                   height: 10,
